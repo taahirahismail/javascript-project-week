@@ -158,10 +158,10 @@ function showBooks() {
         const bookEl = document.createElement("div");
 
         bookEl.innerHTML = `
-        <img src="${book.img}" alt="${book.name}" id="book-cover">
-        <h4>${book.name}</h4>
-        <cite>by ${book.author}</cite>
-        <p>${book.desc}</p>
+        <img src="${book.img}" alt="${book.name}" id="book-cover" class="p-2">
+        <h4 class="text-center">${book.name}</h4>
+        <cite class="text-center">by ${book.author}</cite>
+        <p class="p-2">${book.desc}</p>
 
         <span class="p-2 d-flex align-items-center justify-content-between">
         <h5>R${book.price}</h5>
