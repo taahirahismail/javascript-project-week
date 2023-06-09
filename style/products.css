@@ -8,6 +8,10 @@
 /* font link */
 @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 
+body {
+    background-color: #F5F0BB !important;
+}
+
 /* navbar */
 .logo {
     width: 100px;
@@ -15,6 +19,63 @@
 
 .nav-bg {
     background-color: #B3C890 !important;
+}
+
+/* heading */
+.heading {
+    background-color: #DBDFAA;
+}
+
+/* sort & filter */
+.sort-btns, .filter-btns {
+    background-color: #B3C890;
+    padding: 10px;
+    margin: 3px;
+    border-radius: 5px;
+}
+
+/* main - books */
+#books {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+#books div {
+    background-color: #73A9AD;
+    margin: 10px;
+    padding: 20px;
+    width: 27%;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+#books .add-btn {
+    padding: 5px;
+    background-color: #DBDFAA;
+    border-radius: 5px;
+}
+
+/* modal */
+.modal-content {
+    background-color: #F5F0BB !important;
+}
+
+.rem-btn {
+    color: rgb(188, 2, 2);
+    background-color: #F5F0BB;
+    border: 1px solid rgb(188, 2, 2);
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.rem-btn:hover {
+    color: #F5F0BB;
+    background-color: rgb(188, 2, 2);
 }
 
 /* footer */

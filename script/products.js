@@ -163,10 +163,10 @@ function showBooks() {
         <cite>by ${book.author}</cite>
         <p>${book.desc}</p>
 
-        <div class="p-2 d-flex align-items-center justify-content-between">
-        <h6>R${book.price}</h6>
+        <span class="p-2 d-flex align-items-center justify-content-between">
+        <h5>R${book.price}</h5>
         <button onclick="addToCart(${book.id})" class="add-btn">Add to Cart</button>
-        </div>`;
+        </span>`;
         
 
         booksView.appendChild(bookEl);
@@ -175,25 +175,55 @@ function showBooks() {
 
 showBooks();
 
-// let cart = JSON.parse(localStorage.getItem("books")) || [];
+let cart = JSON.parse(localStorage.getItem("Books")) || [];
 
-// function addToCart(bookID) {
-//     const book = books.find((book) => book.id === bookID);
-//     if (book && book.quantity > 0) {
-//         cart.push(book);
-//         book.quantity--;
-//         cartRefresh();
-//     }
-// }
+function addToCart(bookID) {
+    const book = books.find((book) => book.id === bookID);
+    if (book && book.quantity > 0) {
+        cart.push(book);
+        book.quantity--;
+        cartRefresh();
+    }
+}
 
-// function takeFromCart(index) {
-//     let removedBook = cart.splice(index, 1)[0];
-//     removedBook.quantity++;
-//     cartRefresh();
-// }
+function takeFromCart(index) {
+    let removedBook = cart.splice(index, 1)[0];
+    removedBook.quantity++;
+    cartRefresh();
+}
 
-// function cartRefresh() {
-//     const basket = document.getElementById("cart-in");
+function cartRefresh() {
+    const basket = document.getElementById("cart-in");
+    localStorage.setItem("Books", JSON.stringify(cart));
 
-//     localStorage.setItem("")
-// }
+    basket.innerHTML = "";
+    cart.forEach((book, index) => {
+        const basketBook = document.createElement("div");
+        basketBook.innerHTML = `
+        <div class="p-2 d-flex align-items-center justify-content-between">
+        <img src="${book.img}" alt="${book.name}" id="book-cover" style="width:100px;">
+        <div class="me-auto p-3">
+        <h5>${book.name}</h5>
+        <p>R${book.price}</p>
+        </div>
+        <button onclick="takeFromCart(${index})" id="remove" class="rem-btn">x</button>
+        </div>`;
+
+        basket.appendChild(basketBook);
+    });
+
+    totalPrice();
+}
+
+function totalPrice() {
+    let totalShow = document.getElementById("total");
+    let total = 0;
+
+    cart.forEach(book => {
+        total += eval(book.price)
+    })
+
+    totalShow.textContent = `R${total}`;
+}
+
+cartRefresh();
