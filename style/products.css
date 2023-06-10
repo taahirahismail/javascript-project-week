@@ -81,3 +81,44 @@ body {
     width: 27px;
     padding: 5px;
 }
+
+/* media queries */
+@media screen and (max-width: 700px) {
+    .sort-and-filter h4 {
+        font-size: 15px;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .btns button {
+        font-size: 15px;
+        padding: 5px !important;
+        margin: 0 !important;
+    }
+
+    #books {
+        display: grid;
+        grid-template-columns: 45% 45%;
+        column-gap: 3%;
+        place-content: center;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .sort-and-filter h4 {
+        font-size: 10px;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .btns button {
+        font-size: 10px;
+        padding: 2px !important;
+        margin: 0 !important;
+    }
+
+    #books {
+        display: grid;
+        grid-template-columns: 93%;
+    }
+}
