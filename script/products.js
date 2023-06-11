@@ -1,4 +1,4 @@
-const books = [
+books = [
     {
         id: 1,
         img: "https://i.postimg.cc/Vk6Lg6rk/for-dummies-cover.jpg",
