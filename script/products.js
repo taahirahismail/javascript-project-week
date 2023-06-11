@@ -1,4 +1,4 @@
-const books = [
+let books = [
     {
         id: 1,
         img: "https://i.postimg.cc/Vk6Lg6rk/for-dummies-cover.jpg",
@@ -139,7 +139,6 @@ const books = [
 // function to display books on the products page
 
 const booksView = document.getElementById("books");
-booksView.addEventListener("onload", showBooks());
 
 function showBooks() {    
     books.forEach((book) => {
@@ -218,51 +217,44 @@ function totalPrice() {
 
 // sort functions
 function sortHTL() {
-    let sortedHigh = books.sort((b1, b2) => (parseFloat(b1.price) < parseFloat(b2.price)) ? 1 : (parseFloat(b1.price) > parseFloat(b2.price)) ? -1 : 0);
+    books = books.sort((b1, b2) => (parseFloat(b1.price) < parseFloat(b2.price)) ? 1 : (parseFloat(b1.price) > parseFloat(b2.price)) ? -1 : 0);
 
-    console.log(sortedHigh);
-
-    return sortedHigh;
+    showBooks();
 }
 
 function sortLTH() {
-    let sortedLow = books.sort((b1, b2) => (parseFloat(b1.price) > parseFloat(b2.price)) ? 1 : (parseFloat(b1.price) < parseFloat(b2.price)) ? -1 : 0);
+    books = books.sort((b1, b2) => (parseFloat(b1.price) > parseFloat(b2.price)) ? 1 : (parseFloat(b1.price) < parseFloat(b2.price)) ? -1 : 0);
 
-    console.log(sortedLow);
-
-    return sortedLow;
+    showBooks();
 }
 
 // functions to filter books by genre - how tf do I make this kak work?????
 function filterNonfic() {
-    const nonfic = books.filter(book => book.genre === "nonfiction");
+    books = books.filter(book => book.genre === "nonfiction");
 
-    console.log(nonfic);
-    
-    return nonfic;
-
+    showBooks();
  }
  
  function filterRomance() {
-    const rom = books.filter(book => book.genre === "romance");
+    books = books.filter(book => book.genre === "romance");
 
-    return rom;
+    showBooks();
  }
  
  function filterCrimeMys() {
-    const crime = books.filter(book => book.genre === "crime");
+    books = books.filter(book => book.genre === "crime");
 
-    return crime;
+    showBooks();
  }
  
  function filterHorror() {
-    const horror = books.filter(book => book.genre === "horror");
+    books = books.filter(book => book.genre === "horror");
 
-    return horror;
+    showBooks();
  }
  
  function filterKids() {
-     const kids = books.filter(book => book.genre === "kids");
-
-     return kids;
+    books = books.filter(book => book.genre === "kids");
+    
+    showBooks();
  }
