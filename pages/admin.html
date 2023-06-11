@@ -91,9 +91,9 @@
 
       <div class="admin-table">
         <a data-bs-toggle="modal"
-        data-bs-target="#myModal" href="#myModal" class="btn btn-outline-primary" id="add-book-btn">Add New Book</a>
+        data-bs-target="#edit-book-modal" href="#edit-book-modal" class="btn btn-outline-primary" id="add-book-btn">Add New Book</a>
 
-        <div class="modal" id="myModal">
+        <div class="modal" id="edit-book-modal">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
@@ -106,7 +106,7 @@
               </div>
   
               <div id="book-info">
-                <form onsubmit="submitForm()">
+                <form>
                   <div>
                     <label>Cover:</label>
                     <input type="text" name="cover" id="book-cover">
@@ -134,7 +134,7 @@
                 </form>
               </div>
               <div class="modal-footer">
-              <button class="btn btn-outline-success" onclick="addBook()">Add!</button>
+              <button class="btn btn-outline-success" onclick="addBook()" data-bs-dismiss="modal">Add!</button>
               </div>
             </div>
           </div>

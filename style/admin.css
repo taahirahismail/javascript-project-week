@@ -5,6 +5,10 @@
     font-family: 'Lora', serif !important;
 }
 
+body {
+    background-color: #F5F0BB !important;
+}
+
 /* font link */
 @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 
@@ -15,6 +19,11 @@
 
 .nav-bg {
     background-color: #B3C890 !important;
+}
+
+/* heading */
+.heading {
+    background-color: #DBDFAA;
 }
 
 /* footer */

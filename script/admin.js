@@ -154,7 +154,8 @@ function showTable() {
         </td>
         <td>${book.quantity}</td>
         <td>${book.price}</td>
-        <td> <button onclick="editBook()">edit</button> <button onclick="deleteBook()">delete</button> </td>`
+        <td> <button onclick="editBook()">edit</button> 
+        <button onclick="deleteBook()">delete</button> </td>`
         
         tableView.appendChild(rowEl);
     });
@@ -178,10 +179,10 @@ function addBook() {
     localStorage.setItem("newBooks", JSON.stringify(books));
 };
 
-// function deleteBook(index) {
-//     books = JSON.parse(localStorage.getItem("Books"));
+function deleteBook(index) {
+    books = JSON.parse(localStorage.getItem("Books"));
 
-//     books.splice(index, -1);
+    books.splice(index, 1);
 
-//     localStorage.setItem("Books", JSON.stringify(books));
-// }
+    localStorage.setItem("Books", JSON.stringify(books));
+}
