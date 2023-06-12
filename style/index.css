@@ -52,6 +52,11 @@ main .light-bg {
 main .card-bg {
     background-color: #F5F0BB;
 }
+
+main .blue-bg {
+    background-color: #73A9AD;
+}
+
 /* footer */
 .icons {
     width: 27px;
