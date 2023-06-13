@@ -24,6 +24,11 @@ body {
 /* table */
 table tr {
     border: 1px solid black !important;
+    background-color: #DBDFAA;
+}
+
+.blue-bg {
+    background-color: #73A9AD;
 }
 
 /* heading */

@@ -137,28 +137,29 @@ let books = [
 ];
 
 const tableView = document.getElementById("table-display");
-
-// function to show table with product information
 tableView.addEventListener("onload", showTable());
 
+// function to show table with product information
 function showTable() {
     books = JSON.parse(localStorage.getItem("newBooks"));
+    tableView.innerHTML = "";
 
     books.forEach((book) => {
         const rowEl = document.createElement("tr");
 
         rowEl.innerHTML += `
-        <td class="p-2 border border-black d-flex">       
+        <td class="p-2 border-black d-flex">       
         <img src="${book.img}" alt="${book.name}" style="width:15%">
-        <span class="mx-2">
+        <p class="mx-2 my-auto">
         ${book.name} <cite>by ${book.author}</cite>
-        </span>
+        </p>
         </td>
         <td class="p-2 border border-black">${book.quantity}</td>
         <td class="p-2 border border-black">${book.price}</td>
         <td class="p-2 border border-black"> 
-        <button onclick="editBook()" class="btn btn-outline-primary">edit</button> 
-        <button onclick="deleteBook()" class="btn btn-outline-danger">delete</button> 
+        <button data-bs-toggle="modal"
+        data-bs-target="#edit-book-modal" onclick="editBook(${books.indexOf(book)})" class="btn btn-outline-primary m-1">edit</button> 
+        <button onclick="deleteBook()" class="btn btn-outline-danger m-1">delete</button> 
         </td>`
         
         tableView.appendChild(rowEl);
@@ -181,7 +182,31 @@ function addBook() {
 
     books.push(book);
     localStorage.setItem("newBooks", JSON.stringify(books));
+    location.reload();
 };
+
+function editBook(index) {
+    books = JSON.parse(localStorage.getItem("newBooks"));
+    let book = books[index];
+
+    let newImg = document.getElementById("book-cover-edit");
+    let newName = document.getElementById("book-title-edit");
+    let newAuthor = document.getElementById("book-author-edit");
+    let newPrice = document.getElementById("book-price-edit").value;
+    let newQuan = document.getElementById("quantity-edit").value;
+    let newGenre = document.getElementById("book-genre-edit");
+
+    book.img = newImg;
+    book.name = newName;
+    book.author = newAuthor;
+    book.price = newPrice;
+    book.quantity = newQuan;
+    book.genre = newGenre;
+
+    books[index] = book;
+    
+    showTable();
+}
 
 // function deleteBook(index) {
 //     books = JSON.parse(localStorage.getItem("Books"));

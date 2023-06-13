@@ -91,9 +91,9 @@
 
       <div class="admin-table">
         <a data-bs-toggle="modal"
-        data-bs-target="#edit-book-modal" href="#edit-book-modal" class="m-2 btn btn-outline-primary" id="add-book-btn">Add New Book</a>
+        data-bs-target="#add-book-modal" href="#add-book-modal" class="m-2 btn btn-outline-primary" id="add-book-btn">Add New Book</a>
 
-        <div class="modal" id="edit-book-modal">
+        <div class="modal" id="add-book-modal">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
@@ -140,9 +140,56 @@
           </div>
         </div>
 
+        <div class="modal" id="edit-book-modal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Edit Existing Book:</h4>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                ></button>
+              </div>
+  
+              <div id="book-info-update">
+                <form>
+                  <div>
+                    <label>Cover:</label>
+                    <input type="text" name="cover" id="book-cover-edit">
+                  </div>
+                  <div>
+                    <label>Title:</label>
+                    <input type="text" name="title" id="book-title-edit" required>
+                  </div>
+                  <div>
+                    <label>Author:</label>
+                    <input type="text" name="author" id="book-author-edit" required>
+                  </div>
+                  <div>
+                    <label>Quantity:</label>
+                    <input type="number" name="quantity" id="quantity-edit" required>
+                  </div>
+                  <div>
+                    <label>Price:</label>
+                    <input type="number" name="price" id="book-price-edit" required>
+                  </div>
+                  <div>
+                    <label>Genre:</label>
+                    <input type="text" name="genre" id="book-genre-edit" required>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+              <button type="submit" class="btn btn-outline-success" onclick="editBook()" data-bs-dismiss="modal">Update!</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <table class="m-2 border border-1 border-black">
           <thead>
-            <tr>
+            <tr class="blue-bg">
               <th class="p-2 border border-1 border-black">Product</th>
               <th class="p-2 border border-1 border-black">Quantity</th>
               <th class="p-2 border border-1 border-black">Price</th>
