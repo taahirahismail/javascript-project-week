@@ -41,7 +41,7 @@ function cashPrice() {
       totalCash += eval(item.price);
     });
   
-    cashShow.textContent = `Total Price: R${totalCash}.00`;
+    cashShow.textContent = `Total Price: R${(totalCash).toFixed(2)}`;
   }
 
 function clearCart() {

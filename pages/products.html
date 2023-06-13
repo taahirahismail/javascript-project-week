@@ -107,12 +107,6 @@
           class="sorting d-flex align-items-center justify-content-center m-1 p-2"
         >
           <h4 class="p-3">Sort (by price):</h4>
-          <!-- <select name="sort" id="sort-price" onchange="sortHTL()">
-            <option value="all" id="all-sort">View All</option>
-            <option value="htl" id="htl">High to Low</option>
-            <option value="lth" id="lth">Low to High</option>
-          </select> -->
-
           <div class="btns">
             <button id="htl-btn" class="sort-btns" onclick="sortHTL()">
               High to Low
@@ -126,16 +120,10 @@
           class="filtering d-flex align-items-center justify-content-center m-1 p-2"
         >
         <h4 class="p-3">Filter (by genre):</h4>
-        <!-- <select name="filter" id="filter-genre">
-          <option value="all" id="all-filter">View All</option>
-          <option value="nonfic" id="nonfic">Non-Fiction</option>
-          <option value="romance" id="romance">Romance</option>
-          <option value="crime" id="crime">Crime / Mystery</option>
-          <option value="horror" id="horror">Horror</option>
-          <option value="kids" id="kids">Children</option>
-        </select> -->
-
         <div class="btns">
+          <button id="view-all-btn" class="filter-btns" onclick="showBooks(books)">
+            View All
+          </button>
             <button id="nonfic-btn" class="filter-btns" onclick="filterNonfic()">
                 Non-Fiction
               </button>

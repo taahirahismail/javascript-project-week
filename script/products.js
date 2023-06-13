@@ -4,7 +4,7 @@ let books = [
     img: "https://i.postimg.cc/Vk6Lg6rk/for-dummies-cover.jpg",
     name: "A Little Bit of Everything for Dummies",
     author: "John Wiley & Sons",
-    price: "650.00",
+    price: 650.00,
     quantity: 10,
     genre: "nonfiction",
   },
@@ -13,7 +13,7 @@ let books = [
     img: "https://i.postimg.cc/BnGqBv0d/coding-for-kids-cover.jpg",
     name: "Lift-the-Flap Computers and Coding",
     author: "Rosie Dickins",
-    price: "125.00",
+    price: 125.00,
     quantity: 10,
     genre: "kids",
   },
@@ -22,7 +22,7 @@ let books = [
     img: "https://i.postimg.cc/65ZWZvDr/comp-sci-coding-cover.jpg",
     name: "Everything You Need to Ace Computer Science and Coding in One Big Fat Notebook",
     author: "Grant Smith",
-    price: "555.00",
+    price: 555.00,
     quantity: 10,
     genre: "nonfiction",
   },
@@ -31,25 +31,25 @@ let books = [
     img: "https://i.postimg.cc/FKpsRXww/graveyard-apartment-cover.jpg",
     name: "The Graveyard Apartment",
     author: "Mariko Koike",
-    price: "240.00",
+    price: 240.00,
     quantity: 10,
-    genre: "horro",
+    genre: "horror",
   },
   {
     id: 5,
     img: "https://i.postimg.cc/Z5kqscrs/it-cover.jpg",
     name: "IT",
     author: "Stephen King",
-    price: "700.00",
+    price: 700.00,
     quantity: 10,
-    genre: "horro",
+    genre: "horror",
   },
   {
     id: 6,
     img: "https://i.postimg.cc/kMpGK9Dm/killing-code-cover.jpg",
     name: "The Killing Code",
     author: "J. D. Kirk",
-    price: "325.00",
+    price: 325.00,
     quantity: 10,
     genre: "crime",
   },
@@ -58,7 +58,7 @@ let books = [
     img: "https://i.postimg.cc/hj3DLbDr/kiss-quotient-cover.jpg",
     name: "The Kiss Quotient",
     author: "Helen Hoang",
-    price: "550.00",
+    price: 550.00,
     quantity: 10,
     genre: "romance",
   },
@@ -67,7 +67,7 @@ let books = [
     img: "https://i.postimg.cc/Y05tVrmL/love-and-heartbreak-cover.png",
     name: "The Code for Love and Heartbreak",
     author: "Jillian Cantor",
-    price: "500.00",
+    price: 500.00,
     quantity: 10,
     genre: "romance",
   },
@@ -76,7 +76,7 @@ let books = [
     img: "https://i.postimg.cc/hvfG6Zy6/lucy-lopez-cover.jpg",
     name: "Lucy Lopez: Coding Star",
     author: "Claudia Mills & Grace Zang",
-    price: "98.00",
+    price: 98.00,
     quantity: 10,
     genre: "kids",
   },
@@ -85,7 +85,7 @@ let books = [
     img: "https://i.postimg.cc/ZnBTVB0h/marriage-code-cover.jpg",
     name: "The Marriage Code",
     author: "Brooke Burroughs",
-    price: "235.00",
+    price: 235.00,
     quantity: 10,
     genre: "romance",
   },
@@ -94,7 +94,7 @@ let books = [
     img: "https://i.postimg.cc/rpMwMwZS/my-first-coding-cover.jpg",
     name: "My First Coding Book",
     author: "Kiki Prottsman",
-    price: "120.00",
+    price: 120.00,
     quantity: 10,
     genre: "kids",
   },
@@ -103,7 +103,7 @@ let books = [
     img: "https://i.postimg.cc/7YJ6NcTT/psycho-cover.jpg",
     name: "Psycho",
     author: "Robert Bloch",
-    price: "250.00",
+    price: 250.00,
     quantity: 10,
     genre: "horror",
   },
@@ -112,7 +112,7 @@ let books = [
     img: "https://i.postimg.cc/Rhy0B12F/sherlock-holmes-cover.jpg",
     name: "The Great Adventures of Sherlock Holmes",
     author: "Sir Arthur Conan Doyle",
-    price: "400.00",
+    price: 400.00,
     quantity: 10,
     genre: "crime",
   },
@@ -121,7 +121,7 @@ let books = [
     img: "https://i.postimg.cc/JzcR6W7t/simplifying-js-cover.jpg",
     name: "Simplifying JavaScript",
     author: "Joe Morgan",
-    price: "950.00",
+    price: 950.00,
     quantity: 10,
     genre: "nonfiction",
   },
@@ -130,7 +130,7 @@ let books = [
     img: "https://i.postimg.cc/9QGQ67bm/twyford-code-cover.jpg",
     name: "The Twyford Code",
     author: "Janice Hallett",
-    price: "350.00",
+    price: 350.00,
     quantity: 10,
     genre: "crime",
   },
@@ -141,9 +141,10 @@ const booksView = document.getElementById("books");
 showBooks(books);
 
 function showBooks(books) {
+  booksView.innerHTML = "";
+
   books.forEach((book) => {
     let bookEl = document.createElement("div");
-    bookEl.innerHTML="";
     bookEl.innerHTML = `
         <span class="row mt-auto">
         <img src="${book.img}" alt="${book.name}" id="book-cover" class="p-2">
@@ -153,7 +154,7 @@ function showBooks(books) {
         <h4 class="text-center">${book.name}</h4>
         <cite class="text-center">by ${book.author}</cite>
         <span class="mt-5 mb-0 p-2 d-flex align-items-center justify-content-between">
-        <h5>R${book.price}</h5>
+        <h5>R${(book.price).toFixed(2)}</h5>
         <button onclick="addToCart(${book.id})" class="add-btn">Add to Cart</button>
         </span>
         </span>`;
@@ -164,59 +165,42 @@ function showBooks(books) {
 
 // sort functions
 function sortHTL() {
-  let sortedBooks = books.sort((b1, b2) =>
-    parseFloat(b1.price) < parseFloat(b2.price)
-      ? 1
-      : parseFloat(b1.price) > parseFloat(b2.price)
-      ? -1
-      : 0
-  );
-
+  let sortedBooks = [...books].sort((b1, b2) => b2.price - b1.price);
   showBooks(sortedBooks);
 }
 
 function sortLTH() {
-  let sortedBooks = books.sort((b1, b2) =>
-    parseFloat(b1.price) > parseFloat(b2.price)
-      ? 1
-      : parseFloat(b1.price) < parseFloat(b2.price)
-      ? -1
-      : 0
-  );
-
+  let sortedBooks = [...books].sort((b1, b2) => b1.price - b2.price);
   showBooks(sortedBooks);
 }
+
 
 // functions to filter books by genre - how tf do I make this kak work?????
 function filterNonfic() {
   let filteredBooks = books.filter((book) => book.genre === "nonfiction");
-
   showBooks(filteredBooks);
 }
 
 function filterRomance() {
   let filteredBooks = books.filter((book) => book.genre === "romance");
-
   showBooks(filteredBooks);
 }
 
 function filterCrimeMys() {
   let filteredBooks = books.filter((book) => book.genre === "crime");
-
   showBooks(filteredBooks);
 }
 
 function filterHorror() {
   let filteredBooks = books.filter((book) => book.genre === "horror");
-
   showBooks(filteredBooks);
 }
 
 function filterKids() {
   let filteredBooks = books.filter((book) => book.genre === "kids");
-
   showBooks(filteredBooks);
 }
+
 
 // cart functions
 // local storage stuff - first initializing the cart as either an empty array or an array of books as retrieved from local storage
