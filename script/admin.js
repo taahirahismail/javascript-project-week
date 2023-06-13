@@ -148,14 +148,18 @@ function showTable() {
         const rowEl = document.createElement("tr");
 
         rowEl.innerHTML += `
-        <td>
+        <td class="p-2 border border-black d-flex">       
         <img src="${book.img}" alt="${book.name}" style="width:15%">
-        ${book.name} by ${book.author}
+        <span class="mx-2">
+        ${book.name} <cite>by ${book.author}</cite>
+        </span>
         </td>
-        <td>${book.quantity}</td>
-        <td>${book.price}</td>
-        <td> <button onclick="editBook()">edit</button> 
-        <button onclick="deleteBook()">delete</button> </td>`
+        <td class="p-2 border border-black">${book.quantity}</td>
+        <td class="p-2 border border-black">${book.price}</td>
+        <td class="p-2 border border-black"> 
+        <button onclick="editBook()" class="btn btn-outline-primary">edit</button> 
+        <button onclick="deleteBook()" class="btn btn-outline-danger">delete</button> 
+        </td>`
         
         tableView.appendChild(rowEl);
     });
@@ -179,10 +183,10 @@ function addBook() {
     localStorage.setItem("newBooks", JSON.stringify(books));
 };
 
-function deleteBook(index) {
-    books = JSON.parse(localStorage.getItem("Books"));
+// function deleteBook(index) {
+//     books = JSON.parse(localStorage.getItem("Books"));
 
-    books.splice(index, 1);
+//     books.splice(index, 1);
 
-    localStorage.setItem("Books", JSON.stringify(books));
-}
+//     localStorage.setItem("Books", JSON.stringify(books));
+// }
