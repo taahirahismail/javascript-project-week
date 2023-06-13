@@ -138,25 +138,85 @@ let books = [
 
 // function to display books on the products page
 const booksView = document.getElementById("books");
+showBooks(books);
 
-function showBooks() {
+function showBooks(books) {
   books.forEach((book) => {
-    const bookEl = document.createElement("div");
-
+    let bookEl = document.createElement("div");
+    bookEl.innerHTML="";
     bookEl.innerHTML = `
+        <span class="row mt-auto">
         <img src="${book.img}" alt="${book.name}" id="book-cover" class="p-2">
+        </span>
+        
+        <span class="row mt-auto">
         <h4 class="text-center">${book.name}</h4>
         <cite class="text-center">by ${book.author}</cite>
-
-        <span class="p-2 d-flex align-items-center justify-content-between">
+        <span class="mt-5 mb-0 p-2 d-flex align-items-center justify-content-between">
         <h5>R${book.price}</h5>
         <button onclick="addToCart(${book.id})" class="add-btn">Add to Cart</button>
+        </span>
         </span>`;
 
     booksView.appendChild(bookEl);
   });
 }
-showBooks();
+
+// sort functions
+function sortHTL() {
+  let sortedBooks = books.sort((b1, b2) =>
+    parseFloat(b1.price) < parseFloat(b2.price)
+      ? 1
+      : parseFloat(b1.price) > parseFloat(b2.price)
+      ? -1
+      : 0
+  );
+
+  showBooks(sortedBooks);
+}
+
+function sortLTH() {
+  let sortedBooks = books.sort((b1, b2) =>
+    parseFloat(b1.price) > parseFloat(b2.price)
+      ? 1
+      : parseFloat(b1.price) < parseFloat(b2.price)
+      ? -1
+      : 0
+  );
+
+  showBooks(sortedBooks);
+}
+
+// functions to filter books by genre - how tf do I make this kak work?????
+function filterNonfic() {
+  let filteredBooks = books.filter((book) => book.genre === "nonfiction");
+
+  showBooks(filteredBooks);
+}
+
+function filterRomance() {
+  let filteredBooks = books.filter((book) => book.genre === "romance");
+
+  showBooks(filteredBooks);
+}
+
+function filterCrimeMys() {
+  let filteredBooks = books.filter((book) => book.genre === "crime");
+
+  showBooks(filteredBooks);
+}
+
+function filterHorror() {
+  let filteredBooks = books.filter((book) => book.genre === "horror");
+
+  showBooks(filteredBooks);
+}
+
+function filterKids() {
+  let filteredBooks = books.filter((book) => book.genre === "kids");
+
+  showBooks(filteredBooks);
+}
 
 // cart functions
 // local storage stuff - first initializing the cart as either an empty array or an array of books as retrieved from local storage
@@ -214,60 +274,4 @@ function totalPrice() {
   });
 
   totalShow.textContent = `R${total}`;
-}
-
-// sort functions
-function sortHTL() {
-  books = books.sort((b1, b2) =>
-    parseFloat(b1.price) < parseFloat(b2.price)
-      ? 1
-      : parseFloat(b1.price) > parseFloat(b2.price)
-      ? -1
-      : 0
-  );
-
-  showBooks();
-}
-
-function sortLTH() {
-  books = books.sort((b1, b2) =>
-    parseFloat(b1.price) > parseFloat(b2.price)
-      ? 1
-      : parseFloat(b1.price) < parseFloat(b2.price)
-      ? -1
-      : 0
-  );
-
-  showBooks();
-}
-
-// functions to filter books by genre - how tf do I make this kak work?????
-function filterNonfic() {
-  books = books.filter((book) => book.genre === "nonfiction");
-
-  showBooks();
-}
-
-function filterRomance() {
-  books = books.filter((book) => book.genre === "romance");
-
-  showBooks();
-}
-
-function filterCrimeMys() {
-  books = books.filter((book) => book.genre === "crime");
-
-  showBooks();
-}
-
-function filterHorror() {
-  books = books.filter((book) => book.genre === "horror");
-
-  showBooks();
-}
-
-function filterKids() {
-  books = books.filter((book) => book.genre === "kids");
-
-  showBooks();
 }
