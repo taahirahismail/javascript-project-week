@@ -133,8 +133,7 @@ let books = [
     price: 350.00,
     quantity: 10,
     genre: "crime",
-  },
-];
+  }];
 
 // function to display books on the products page
 const booksView = document.getElementById("books");
