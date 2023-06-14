@@ -214,10 +214,10 @@ function editBook(index) {
     showTable();
 }
 
-function deleteBook(index) {
+function deleteBook(id) {
     adminBooks = JSON.parse(localStorage.getItem("newBooks"));
 
-    adminBooks.splice(index, 1)[0];
+    adminBooks.slice(id, 1)[0];
 
     localStorage.setItem("newBooks", JSON.stringify(adminBooks));
     
