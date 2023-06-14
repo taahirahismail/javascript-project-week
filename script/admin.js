@@ -136,10 +136,11 @@ let adminBooks = [
     },
 ];
 
+localStorage.setItem("newBooks", JSON.stringify(adminBooks));
+
 const tableView = document.getElementById("table-display");
 tableView.addEventListener("onload", showTable());
 
-localStorage.setItem("newBooks", JSON.stringify(adminBooks));
 
 // function to show table with product information
 function showTable() {
@@ -183,6 +184,7 @@ function addBook() {
     };
 
     adminBooks.push(book);
+
     localStorage.setItem("newBooks", JSON.stringify(adminBooks));
     location.reload();
 };
@@ -191,12 +193,12 @@ function editBook(index) {
     adminBooks = JSON.parse(localStorage.getItem("newBooks"));
     let book = adminBooks[index];
 
-    let newImg = document.getElementById("book-cover-edit");
-    let newName = document.getElementById("book-title-edit");
-    let newAuthor = document.getElementById("book-author-edit");
+    let newImg = document.getElementById("book-cover-edit").value;
+    let newName = document.getElementById("book-title-edit").value;
+    let newAuthor = document.getElementById("book-author-edit").value;
     let newPrice = document.getElementById("book-price-edit").value;
     let newQuan = document.getElementById("quantity-edit").value;
-    let newGenre = document.getElementById("book-genre-edit");
+    let newGenre = document.getElementById("book-genre-edit").value;
 
     book.img = newImg;
     book.name = newName;
@@ -206,6 +208,8 @@ function editBook(index) {
     book.genre = newGenre;
 
     adminBooks[index] = book;
+
+    localStorage.setItem("newBooks", JSON.stringify(adminBooks))
     
     showTable();
 }
