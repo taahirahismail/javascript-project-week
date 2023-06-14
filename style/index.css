@@ -39,10 +39,9 @@ body {
 }
 
 /* main */
-.books-carousel {
-    width: 50%;
-    display: block;
-    margin: auto;
+.books-card {
+    display: grid;
+    grid-template-columns: auto auto auto;
 }
 
 main .light-bg {
