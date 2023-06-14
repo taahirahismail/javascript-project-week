@@ -136,11 +136,10 @@ let adminBooks = [
     },
 ];
 
-localStorage.setItem("newBooks", JSON.stringify(adminBooks));
-
 const tableView = document.getElementById("table-display");
 tableView.addEventListener("onload", showTable());
 
+localStorage.setItem("newBooks", JSON.stringify(adminBooks));
 
 // function to show table with product information
 function showTable() {
