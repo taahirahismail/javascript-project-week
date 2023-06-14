@@ -1,16 +1,16 @@
+/* font link */
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Lora', serif !important;
+    font-family: 'Raleway', sans-serif;
 }
 
 body {
     background-color: #F5F0BB !important;
 }
-
-/* font link */
-@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 
 /* navbar */
 .logo {
@@ -24,6 +24,20 @@ body {
 /* heading */
 .heading {
     background-color: #DBDFAA;
+}
+
+/* table */
+table tr {
+    border: 1px solid black !important;
+    background-color: #DBDFAA;
+}
+
+.blue-bg {
+    background-color: #73A9AD;
+}
+
+.modal-content {
+    background-color: #F5F0BB !important;
 }
 
 /* footer */
