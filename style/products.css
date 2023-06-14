@@ -1,12 +1,12 @@
+/* font link */
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Lora', serif !important;
+    font-family: 'Raleway', sans-serif;
 }
-
-/* font link */
-@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 
 body {
     background-color: #F5F0BB !important;
@@ -34,14 +34,18 @@ body {
     border-radius: 5px;
 }
 
+.sort-btns:hover, .filter-btns:hover {
+    background-color: #73A9AD;
+}
+
 /* main - books */
-#books {
+#books, #sorted-htl, #sorted-lth {
     display: grid;
     grid-template-columns: 30% 30% 30%;
     column-gap: 3%;
 }
 
-#books div {
+#books div, #sorted-htl div, #sorted-lth div {
     background-color: #73A9AD;
     margin: 10px;
     padding: 20px;
@@ -51,10 +55,15 @@ body {
     flex-direction: column;
 }
 
-#books .add-btn {
+#books .add-btn, #sorted-htl .add-btn, #sorted-lth .add-btn {
     padding: 5px;
     background-color: #DBDFAA;
     border-radius: 5px;
+}
+
+#books .add-btn:hover, #sorted-htl .add-btn:hover, #sorted-lth .add-btn:hover {
+    background-color: #B3C890;
+    padding: 10px;
 }
 
 /* modal */
@@ -83,7 +92,7 @@ body {
 }
 
 /* media queries */
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
     .sort-and-filter h4 {
         font-size: 15px;
         margin: 0 !important;
