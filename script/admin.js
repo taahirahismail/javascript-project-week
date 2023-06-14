@@ -1,4 +1,4 @@
-let books = [
+let adminBooks = [
     {
         id: 1,
         img: "https://i.postimg.cc/Vk6Lg6rk/for-dummies-cover.jpg",
@@ -139,12 +139,14 @@ let books = [
 const tableView = document.getElementById("table-display");
 tableView.addEventListener("onload", showTable());
 
+localStorage.setItem("newBooks", JSON.stringify(adminBooks));
+
 // function to show table with product information
 function showTable() {
-    books = JSON.parse(localStorage.getItem("newBooks"));
+    adminBooks = JSON.parse(localStorage.getItem("newBooks"));
     tableView.innerHTML = "";
 
-    books.forEach((book) => {
+    adminBooks.forEach((book) => {
         const rowEl = document.createElement("tr");
 
         rowEl.innerHTML += `
@@ -158,7 +160,7 @@ function showTable() {
         <td class="p-2 border border-black">${book.price}</td>
         <td class="p-2 border border-black"> 
         <button data-bs-toggle="modal"
-        data-bs-target="#edit-book-modal" onclick="editBook(${books.indexOf(book)})" class="btn btn-outline-primary m-1">edit</button> 
+        data-bs-target="#edit-book-modal" onclick="editBook(${adminBooks.indexOf(book)})" class="btn btn-outline-primary m-1">edit</button> 
         <button onclick="deleteBook()" class="btn btn-outline-danger m-1">delete</button> 
         </td>`
         
@@ -168,7 +170,7 @@ function showTable() {
 
 // function to add a new book to the products table
 function addBook() {
-    books = JSON.parse(localStorage.getItem("newBooks"));
+    adminBooks = JSON.parse(localStorage.getItem("newBooks"));
 
     let book = {
         id: "",
@@ -180,14 +182,14 @@ function addBook() {
         genre: document.getElementById("book-genre").value,
     };
 
-    books.push(book);
-    localStorage.setItem("newBooks", JSON.stringify(books));
+    adminBooks.push(book);
+    localStorage.setItem("newBooks", JSON.stringify(adminBooks));
     location.reload();
 };
 
 function editBook(index) {
-    books = JSON.parse(localStorage.getItem("newBooks"));
-    let book = books[index];
+    adminBooks = JSON.parse(localStorage.getItem("newBooks"));
+    let book = adminBooks[index];
 
     let newImg = document.getElementById("book-cover-edit");
     let newName = document.getElementById("book-title-edit");
@@ -203,15 +205,17 @@ function editBook(index) {
     book.quantity = newQuan;
     book.genre = newGenre;
 
-    books[index] = book;
+    adminBooks[index] = book;
     
     showTable();
 }
 
-// function deleteBook(index) {
-//     books = JSON.parse(localStorage.getItem("Books"));
+function deleteBook(index) {
+    adminBooks = JSON.parse(localStorage.getItem("newBooks"));
 
-//     books.splice(index, 1);
+    adminBooks.splice(index, 1)[0];
 
-//     localStorage.setItem("Books", JSON.stringify(books));
-// }
+    localStorage.setItem("newBooks", JSON.stringify(adminBooks));
+    
+    location.reload();
+}

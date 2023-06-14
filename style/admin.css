@@ -21,6 +21,11 @@ body {
     background-color: #B3C890 !important;
 }
 
+/* heading */
+.heading {
+    background-color: #DBDFAA;
+}
+
 /* table */
 table tr {
     border: 1px solid black !important;
@@ -31,9 +36,8 @@ table tr {
     background-color: #73A9AD;
 }
 
-/* heading */
-.heading {
-    background-color: #DBDFAA;
+.modal-content {
+    background-color: #F5F0BB !important;
 }
 
 /* footer */
