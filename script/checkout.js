@@ -8,6 +8,8 @@ function cashRemove(index) {
   }
 
 function checkout() {
+  checkoutView.innerHTML = "";
+
     cash.forEach((item, index) => {
         let cashEl = document.createElement("div");
 
@@ -18,7 +20,7 @@ function checkout() {
         <img src="${item.img}" alt="${item.name}" id="book-cover" style="width:100px;">
         <div class="me-auto p-3">
         <h5>${item.name}</h5>
-        <p>R${item.price}</p>
+        <p>R${(item.price).toFixed(2)}</p>
         </div>
         <button onclick="cashRemove(${index})" id="remove" class="rem-btn">x</button>
         </div>
@@ -51,3 +53,6 @@ function clearCart() {
 
     location.reload();
 }
+
+const clearBtn = document.getElementById("clearCart")
+clearBtn.addEventListener("click", clearCart)

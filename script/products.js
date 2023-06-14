@@ -175,7 +175,7 @@ function sortLTH() {
 }
 
 
-// functions to filter books by genre - how tf do I make this kak work?????
+// functions to filter books by genre
 function filterNonfic() {
   let filteredBooks = books.filter((book) => book.genre === "nonfiction");
   showBooks(filteredBooks);
@@ -237,7 +237,7 @@ function cartRefresh() {
         <img src="${book.img}" alt="${book.name}" id="book-cover" style="width:100px;">
         <div class="me-auto p-3">
         <h5>${book.name}</h5>
-        <p>R${book.price}</p>
+        <p>R${(book.price).toFixed(2)}</p>
         </div>
         <button onclick="takeFromCart(${index})" id="remove" class="rem-btn">x</button>
         </div>`;
@@ -257,5 +257,5 @@ function totalPrice() {
     total += eval(book.price);
   });
 
-  totalShow.textContent = `R${total}`;
+  totalShow.textContent = `R${(total).toFixed(2)}`;
 }
