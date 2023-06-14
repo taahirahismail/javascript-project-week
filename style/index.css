@@ -39,6 +39,10 @@ body {
 }
 
 /* main */
+.books-displays {
+    display: flex;
+}
+
 .books-card {
     display: grid;
     grid-template-columns: auto auto auto;
@@ -60,4 +64,29 @@ main .blue-bg {
 .icons {
     width: 27px;
     padding: 5px;
+}
+
+@media screen and (max-width: 800px) {
+    .books-displays {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .books-card {
+        display: block;
+    }
+
+    .add-bg {
+        background-color: #DBDFAA;
+        opacity: 0.85;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .nav-name {
+        display: none;
+    }
 }

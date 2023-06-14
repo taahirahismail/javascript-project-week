@@ -1,4 +1,4 @@
-let adminBooks = [
+let adminBooks = JSON.parse(localStorage.getItem("newBooks")) || [
     {
         id: 1,
         img: "https://i.postimg.cc/Vk6Lg6rk/for-dummies-cover.jpg",
@@ -33,7 +33,7 @@ let adminBooks = [
         author: "Mariko Koike",
         price: 240,
         quantity: 10,
-        genre: "horro",
+        genre: "horror",
     },
     {
         id: 5,
@@ -42,7 +42,7 @@ let adminBooks = [
         author: "Stephen King",
         price: 700,
         quantity: 10,
-        genre: "horro",
+        genre: "horror",
     },
     {
         id: 6,
@@ -136,16 +136,15 @@ let adminBooks = [
     },
 ];
 
-showTable();
-localStorage.setItem("newBooks", JSON.stringify(adminBooks));
-showTable();
+// showTable();
+// localStorage.setItem("newBooks", JSON.stringify(adminBooks));
 
 // tableView.addEventListener("onload", showTable());
 
 // function to show table with product information
 function showTable() {
     const tableView = document.getElementById("table-display");
-    adminBooks = JSON.parse(localStorage.getItem("newBooks"));
+    // adminBooks = JSON.parse(localStorage.getItem("newBooks"));
     tableView.innerHTML = "";
 
     adminBooks.forEach((book) => {
@@ -168,7 +167,11 @@ function showTable() {
         
         tableView.appendChild(rowEl);
     });
+
+    localStorage.setItem("newBooks", JSON.stringify(adminBooks));
 }
+
+showTable();
 
 // function to add a new book to the products table
 let addBook = document.getElementById("add-btn");

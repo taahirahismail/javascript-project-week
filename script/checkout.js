@@ -47,12 +47,23 @@ function cashPrice() {
   }
 
 function clearCart() {
-    localStorage.clear();
+    localStorage.removeItem("Books");
 
     alert("Thank you for your purchase!");
+    // location.reload();
 
-    location.reload();
+    document.getElementById("clear-cart").style.display = "none";
+    document.getElementById("cash-total").style.display = "none";
+
+    checkoutView.innerHTML = `
+    <div class="m-2 p-3 text-center">
+    <h3>
+    Your cart is empty!
+    </h3>
+    <a href="../pages/products.html" class="btn btn-outline-success">Back to Our Books</a>
+    </div>`;
+
 }
 
-const clearBtn = document.getElementById("clearCart")
+const clearBtn = document.getElementById("clear-cart")
 clearBtn.addEventListener("click", clearCart)
