@@ -153,7 +153,7 @@
               </div>
   
               <div id="book-info-update">
-                <form class="m-2 p-2 text-center">
+                <form class="m-2 p-2 text-center" id="edit-book-form">
                   <div class="m-1">
                     <label>Cover:</label>
                     <input type="text" name="cover" id="book-cover-edit">
@@ -181,7 +181,7 @@
                 </form>
               </div>
               <div class="modal-footer">
-              <button type="submit" class="btn btn-outline-success" onclick="editBook()" data-bs-dismiss="modal">Update!</button>
+              <button type="submit" class="btn btn-outline-success" onclick="editBook(index)" data-bs-dismiss="modal">Update!</button>
               </div>
             </div>
           </div>
