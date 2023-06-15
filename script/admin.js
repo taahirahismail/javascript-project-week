@@ -136,15 +136,9 @@ let adminBooks = JSON.parse(localStorage.getItem("newBooks")) || [
     },
 ];
 
-// showTable();
-// localStorage.setItem("newBooks", JSON.stringify(adminBooks));
-
-// tableView.addEventListener("onload", showTable());
-
-// function to show table with product information
+// function to display the products in a table on the DOM
 function showTable() {
-    const tableView = document.getElementById("table-display");
-    // adminBooks = JSON.parse(localStorage.getItem("newBooks"));
+    let tableView = document.getElementById("table-display");
     tableView.innerHTML = "";
 
     adminBooks.forEach((book) => {
@@ -158,7 +152,7 @@ function showTable() {
         </p>
         </td>
         <td class="p-2 border border-black">${book.quantity}</td>
-        <td class="p-2 border border-black">R${(book.price).toFixed(2)}</td>
+        <td class="p-2 border border-black">R${parseInt(book.price).toFixed(2)}</td>
         <td class="p-2 border border-black"> 
         <button data-bs-toggle="modal"
         data-bs-target="#edit-book-modal" onclick="editBook(${adminBooks.indexOf(book)})" class="btn btn-outline-primary m-1">edit</button> 
@@ -201,90 +195,42 @@ let addBook = document.getElementById("add-btn");
         localStorage.setItem("newBooks", JSON.stringify(adminBooks));
         showTable();
     } catch(error) {
-        console.log(error);
+        console.error("Unable to add new book:", error);
     }
 });
 
-// function editBook(book) {
-    // adminBooks = JSON.parse(localStorage.getItem("newBooks"));
-    // let book = adminBooks[index];
-
-    // let newImg = document.getElementById("book-cover-edit").value;
-    // let newName = document.getElementById("book-title-edit").value;
-    // let newAuthor = document.getElementById("book-author-edit").value;
-    // let newPrice = document.getElementById("book-price-edit").value;
-    // let newQuan = document.getElementById("quantity-edit").value;
-    // let newGenre = document.getElementById("book-genre-edit").value;
-
-    // book.img = newImg;
-    // book.name = newName;
-    // book.author = newAuthor;
-    // book.price = newPrice;
-    // book.quantity = newQuan;
-    // book.genre = newGenre;
-
-    // adminBooks[index] = book;
-
-    // localStorage.setItem("newBooks", JSON.stringify(adminBooks))
-    
-    // showTable();
-
-    // constructor attempt
-    // this.id = book.id;
-    // this.img = document.getElementById("book-cover-edit").value;
-    // this.name = document.getElementById("book-title-edit").value;
-    // this.author = document.getElementById("book-author-edit").value;
-    // this.price = document.getElementById("book-price-edit").value;
-    // this.quantity = document.getElementById("quantity-edit").value;
-    // this.genre = document.getElementById("book-genre-edit").value;
-
-    // let bookIndex = adminBooks.findIndex((thing) => {
-    //     return thing.id === book.id;
-    // });
-
-    // adminBooks[bookIndex] = {
-    //     id: this.id,
-    //     img: this.img,
-    //     name: this.name,
-    //     author: this.author,
-    //     price: this.price,
-    //     quantity: this.quantity,
-    //     genre: this.genre,
-    // };
-
-    // localStorage.setItem("newBooks", JSON.stringify(adminBooks));
-    // showTable();
-    // location.reload();
-// }
-
+// function to edit/update an existing book
 function editBook(index) {
     adminBooks = JSON.parse(localStorage.getItem("newBooks"));
     let book = adminBooks[index];
 
-    document.getElementById("book-cover-edit").value = book.img;
-    document.getElementById("book-title-edit").value = book.name;
-    document.getElementById("book-author-edit").value = book.author;
-    document.getElementById("book-price-edit").value = book.price;
-    document.getElementById("quantity-edit").value = book.quantity;
-    document.getElementById("book-genre-edit").value = book.genre;
+    try {
+        document.getElementById("book-cover-edit").value = book.img;
+        document.getElementById("book-title-edit").value = book.name;
+        document.getElementById("book-author-edit").value = book.author;
+        document.getElementById("book-price-edit").value = book.price;
+        document.getElementById("quantity-edit").value = book.quantity;
+        document.getElementById("book-genre-edit").value = book.genre;
 
-    document.getElementById("edit-book-form").onsubmit = function (e) {
-        e.preventDefault();
+        let updateButton = document.getElementById("edit-book-update-btn");
 
-        book.img = document.getElementById("book-cover-edit").value;
-        book.name = document.getElementById("book-title-edit").value;
-        book.author = document.getElementById("book-author-edit").value;
-        book.price = parseFloat(document.getElementById("book-price-edit").value);
-        book.quantity = parseInt(document.getElementById("quantity-edit").value);
-        book.genre = document.getElementById("book-genre-edit").value;
+        updateButton.addEventListener('click', () => {
+            book.img = document.getElementById("book-cover-edit").value;
+            book.name = document.getElementById("book-title-edit").value;
+            book.author = document.getElementById("book-author-edit").value;
+            book.price = parseFloat(document.getElementById("book-price-edit").value);
+            book.quantity = parseInt(document.getElementById("quantity-edit").value);
+            book.genre = document.getElementById("book-genre-edit").value;
 
-        adminBooks[index] = book;
-
-        localStorage.setItem("newBooks", JSON.stringify(adminBooks));
-        showTable();
-    };
+            localStorage.setItem("newBooks", JSON.stringify(adminBooks));
+            showTable();
+        });
+    } catch (error) {
+        console.error("Unable to update book:", error);
+    }
 }
 
+// function to delete a book from the array
 function deleteBook(index) {
     adminBooks = JSON.parse(localStorage.getItem("newBooks"));
 

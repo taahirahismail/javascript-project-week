@@ -20,7 +20,7 @@ function checkout() {
         <img src="${item.img}" alt="${item.name}" id="book-cover" style="width:100px;">
         <div class="me-auto p-3">
         <h5>${item.name}</h5>
-        <p>R${(item.price).toFixed(2)}</p>
+        <p>R${parseInt(item.price).toFixed(2)}</p>
         </div>
         <button onclick="cashRemove(${index})" id="remove" class="rem-btn">x</button>
         </div>
@@ -43,7 +43,7 @@ function cashPrice() {
       totalCash += eval(item.price);
     });
   
-    cashShow.textContent = `Total Price: R${(totalCash).toFixed(2)}`;
+    cashShow.textContent = `Total Price: R${parseInt(totalCash).toFixed(2)}`;
   }
 
 function clearCart() {

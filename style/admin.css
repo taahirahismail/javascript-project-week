@@ -21,6 +21,16 @@ body {
     background-color: #B3C890 !important;
 }
 
+.nav-link:hover {
+    background-color: #DBDFAA;
+    border-radius: 5px;
+}
+
+.active {
+    background-color: #DBDFAA !important;
+    border-radius: 5px !important;
+}
+
 /* heading */
 .heading {
     background-color: #DBDFAA;

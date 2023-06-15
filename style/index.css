@@ -12,7 +12,6 @@ body {
     background-color:  #F5F0BB !important;
 }
 
-
 /* navbar */
 .logo {
     width: 100px;
@@ -20,6 +19,16 @@ body {
 
 .nav-bg {
     background-color: #B3C890 !important;
+}
+
+.nav-link:hover {
+    background-color: #DBDFAA;
+    border-radius: 5px;
+}
+
+.active {
+    background-color: #DBDFAA !important;
+    border-radius: 5px !important;
 }
 
 /* heading */
