@@ -54,6 +54,10 @@ body {
     background-color: rgb(188, 2, 2);
 }
 
+main {
+    min-height: 90vh;
+}
+
 /* footer */
 .icons {
     width: 27px;

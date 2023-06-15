@@ -1,12 +1,14 @@
-let cash = JSON.parse(localStorage.getItem("Books"));
+let cash = JSON.parse(localStorage.getItem("Books")) || [];
 let checkoutView = document.getElementById("checkout");
 
+// function to remove an item from the cart
 function cashRemove(index) {
     cash.splice(index, 1)[0];
-    // removedBook.quantity++;
+    
     checkout();
   }
 
+// function to display the items in the cart on the checkout page
 function checkout() {
   checkoutView.innerHTML = "";
 
@@ -32,6 +34,20 @@ function checkout() {
     cashPrice();
 }
 
+if (cash.length === 0) {
+    document.getElementById("clear-cart").style.display = "none";
+    document.getElementById("cash-total").style.display = "none";
+
+    checkoutView.innerHTML = "";
+    checkoutView.innerHTML = `
+    <div class="m-2 p-3 text-center">
+    <h3>
+    Your cart is empty!
+    </h3>
+    <a href="../pages/products.html" class="btn btn-outline-success">Back to Our Books</a>
+    </div>`;
+}
+
 checkout();
 
 // function that displays the total price of everything in the cart
@@ -46,11 +62,11 @@ function cashPrice() {
     cashShow.textContent = `Total Price: R${parseInt(totalCash).toFixed(2)}`;
   }
 
+// function to clear all items from the cart and from local storage
 function clearCart() {
     localStorage.removeItem("Books");
 
     alert("Thank you for your purchase!");
-    // location.reload();
 
     document.getElementById("clear-cart").style.display = "none";
     document.getElementById("cash-total").style.display = "none";
