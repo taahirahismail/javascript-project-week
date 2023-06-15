@@ -63,3 +63,10 @@ main {
     width: 27px;
     padding: 5px;
 }
+
+/* media queries */
+@media screen and (max-width: 400px) {
+    .nav-name {
+        display: none;
+    }
+}

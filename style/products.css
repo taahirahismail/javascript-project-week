@@ -122,6 +122,13 @@ body {
     }
 }
 
+/* media queries */
+@media screen and (max-width: 400px) {
+    .nav-name {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 430px) {
     .sort-and-filter h4 {
         font-size: 10px;

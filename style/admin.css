@@ -55,3 +55,29 @@ table tr {
     width: 27px;
     padding: 5px;
 }
+
+@media screen and (max-width: 550px) {
+    #table-display img {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    #table-display {
+        font-size: 12px;
+    }
+
+    #table-display .btn {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    #table-display {
+        font-size: 10px;
+    }
+
+    #table-display .btn {
+        font-size: 8px;
+    }
+}

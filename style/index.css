@@ -94,6 +94,7 @@ main .blue-bg {
     }
 }
 
+/* media queries */
 @media screen and (max-width: 400px) {
     .nav-name {
         display: none;
