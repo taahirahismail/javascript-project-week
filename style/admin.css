@@ -1,83 +1,83 @@
 /* font link */
-@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Raleway', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway", sans-serif;
 }
 
 body {
-    background-color: #F5F0BB !important;
+  background-color: #f5f0bb !important;
 }
 
 /* navbar */
 .logo {
-    width: 100px;
+  width: 100px;
 }
 
 .nav-bg {
-    background-color: #B3C890 !important;
+  background-color: #b3c890 !important;
 }
 
 .nav-link:hover {
-    background-color: #DBDFAA;
-    border-radius: 5px;
+  background-color: #dbdfaa;
+  border-radius: 5px;
 }
 
 .active {
-    background-color: #DBDFAA !important;
-    border-radius: 5px !important;
+  background-color: #dbdfaa !important;
+  border-radius: 5px !important;
 }
 
 /* heading */
 .heading {
-    background-color: #DBDFAA;
+  background-color: #dbdfaa;
 }
 
 /* table */
 table tr {
-    border: 1px solid black !important;
-    background-color: #DBDFAA;
+  border: 1px solid black !important;
+  background-color: #dbdfaa;
 }
 
 .blue-bg {
-    background-color: #73A9AD;
+  background-color: #73a9ad;
 }
 
 .modal-content {
-    background-color: #F5F0BB !important;
+  background-color: #f5f0bb !important;
 }
 
 /* footer */
 .icons {
-    width: 27px;
-    padding: 5px;
+  width: 27px;
+  padding: 5px;
 }
 
 @media screen and (max-width: 550px) {
-    #table-display img {
-        display: none;
-    }
+  #table-display img {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 380px) {
-    #table-display {
-        font-size: 12px;
-    }
+  #table-display {
+    font-size: 12px;
+  }
 
-    #table-display .btn {
-        font-size: 10px;
-    }
+  #table-display .btn {
+    font-size: 10px;
+  }
 }
 
 @media screen and (max-width: 330px) {
-    #table-display {
-        font-size: 10px;
-    }
+  #table-display {
+    font-size: 10px;
+  }
 
-    #table-display .btn {
-        font-size: 8px;
-    }
+  #table-display .btn {
+    font-size: 8px;
+  }
 }

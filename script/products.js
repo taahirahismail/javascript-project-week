@@ -1,138 +1,138 @@
 let books = JSON.parse(localStorage.getItem("newBooks")) || [
   {
-      id: 1,
-      img: "https://i.postimg.cc/Vk6Lg6rk/for-dummies-cover.jpg",
-      name: "A Little Bit of Everything for Dummies",
-      author: "John Wiley & Sons",
-      price: 650,
-      quantity: 10,
-      genre: "nonfiction",
+    id: 1,
+    img: "https://i.postimg.cc/Vk6Lg6rk/for-dummies-cover.jpg",
+    name: "A Little Bit of Everything for Dummies",
+    author: "John Wiley & Sons",
+    price: 650,
+    quantity: 10,
+    genre: "nonfiction",
   },
   {
-      id: 2,
-      img: "https://i.postimg.cc/BnGqBv0d/coding-for-kids-cover.jpg",
-      name: "Lift-the-Flap Computers and Coding",
-      author: "Rosie Dickins",
-      price: 125,
-      quantity: 10,
-      genre: "kids",
+    id: 2,
+    img: "https://i.postimg.cc/BnGqBv0d/coding-for-kids-cover.jpg",
+    name: "Lift-the-Flap Computers and Coding",
+    author: "Rosie Dickins",
+    price: 125,
+    quantity: 10,
+    genre: "kids",
   },
   {
-      id: 3,
-      img: "https://i.postimg.cc/65ZWZvDr/comp-sci-coding-cover.jpg",
-      name: "Everything You Need to Ace Computer Science and Coding in One Big Fat Notebook",
-      author: "Grant Smith",
-      price: 555,
-      quantity: 10,
-      genre: "nonfiction",
+    id: 3,
+    img: "https://i.postimg.cc/65ZWZvDr/comp-sci-coding-cover.jpg",
+    name: "Everything You Need to Ace Computer Science and Coding in One Big Fat Notebook",
+    author: "Grant Smith",
+    price: 555,
+    quantity: 10,
+    genre: "nonfiction",
   },
   {
-      id: 4,
-      img: "https://i.postimg.cc/FKpsRXww/graveyard-apartment-cover.jpg",
-      name: "The Graveyard Apartment",
-      author: "Mariko Koike",
-      price: 240,
-      quantity: 10,
-      genre: "horror",
+    id: 4,
+    img: "https://i.postimg.cc/FKpsRXww/graveyard-apartment-cover.jpg",
+    name: "The Graveyard Apartment",
+    author: "Mariko Koike",
+    price: 240,
+    quantity: 10,
+    genre: "horror",
   },
   {
-      id: 5,
-      img: "https://i.postimg.cc/Z5kqscrs/it-cover.jpg",
-      name: "IT",
-      author: "Stephen King",
-      price: 700,
-      quantity: 10,
-      genre: "horror",
+    id: 5,
+    img: "https://i.postimg.cc/Z5kqscrs/it-cover.jpg",
+    name: "IT",
+    author: "Stephen King",
+    price: 700,
+    quantity: 10,
+    genre: "horror",
   },
   {
-      id: 6,
-      img: "https://i.postimg.cc/kMpGK9Dm/killing-code-cover.jpg",
-      name: "The Killing Code",
-      author: "J. D. Kirk",
-      price: 325,
-      quantity: 10,
-      genre: "crime",
+    id: 6,
+    img: "https://i.postimg.cc/kMpGK9Dm/killing-code-cover.jpg",
+    name: "The Killing Code",
+    author: "J. D. Kirk",
+    price: 325,
+    quantity: 10,
+    genre: "crime",
   },
   {
-      id: 7,
-      img: "https://i.postimg.cc/hj3DLbDr/kiss-quotient-cover.jpg",
-      name: "The Kiss Quotient",
-      author: "Helen Hoang",
-      price: 550,
-      quantity: 10,
-      genre: "romance",
+    id: 7,
+    img: "https://i.postimg.cc/hj3DLbDr/kiss-quotient-cover.jpg",
+    name: "The Kiss Quotient",
+    author: "Helen Hoang",
+    price: 550,
+    quantity: 10,
+    genre: "romance",
   },
   {
-      id: 8,
-      img: "https://i.postimg.cc/Y05tVrmL/love-and-heartbreak-cover.png",
-      name: "The Code for Love and Heartbreak",
-      author: "Jillian Cantor",
-      price: 500,
-      quantity: 10,
-      genre: "romance",
+    id: 8,
+    img: "https://i.postimg.cc/Y05tVrmL/love-and-heartbreak-cover.png",
+    name: "The Code for Love and Heartbreak",
+    author: "Jillian Cantor",
+    price: 500,
+    quantity: 10,
+    genre: "romance",
   },
   {
-      id: 9,
-      img: "https://i.postimg.cc/hvfG6Zy6/lucy-lopez-cover.jpg",
-      name: "Lucy Lopez: Coding Star",
-      author: "Claudia Mills & Grace Zang",
-      price: 98,
-      quantity: 10,
-      genre: "kids",
+    id: 9,
+    img: "https://i.postimg.cc/hvfG6Zy6/lucy-lopez-cover.jpg",
+    name: "Lucy Lopez: Coding Star",
+    author: "Claudia Mills & Grace Zang",
+    price: 98,
+    quantity: 10,
+    genre: "kids",
   },
   {
-      id: 10,
-      img: "https://i.postimg.cc/ZnBTVB0h/marriage-code-cover.jpg",
-      name: "The Marriage Code",
-      author: "Brooke Burroughs",
-      price: 235,
-      quantity: 10,
-      genre: "romance",
+    id: 10,
+    img: "https://i.postimg.cc/ZnBTVB0h/marriage-code-cover.jpg",
+    name: "The Marriage Code",
+    author: "Brooke Burroughs",
+    price: 235,
+    quantity: 10,
+    genre: "romance",
   },
   {
-      id: 11,
-      img: "https://i.postimg.cc/rpMwMwZS/my-first-coding-cover.jpg",
-      name: "My First Coding Book",
-      author: "Kiki Prottsman",
-      price: 120,
-      quantity: 10,
-      genre: "kids",
+    id: 11,
+    img: "https://i.postimg.cc/rpMwMwZS/my-first-coding-cover.jpg",
+    name: "My First Coding Book",
+    author: "Kiki Prottsman",
+    price: 120,
+    quantity: 10,
+    genre: "kids",
   },
   {
-      id: 12,
-      img: "https://i.postimg.cc/7YJ6NcTT/psycho-cover.jpg",
-      name: "Psycho",
-      author: "Robert Bloch",
-      price: 250,
-      quantity: 10,
-      genre: "horror",
+    id: 12,
+    img: "https://i.postimg.cc/7YJ6NcTT/psycho-cover.jpg",
+    name: "Psycho",
+    author: "Robert Bloch",
+    price: 250,
+    quantity: 10,
+    genre: "horror",
   },
   {
-      id: 13,
-      img: "https://i.postimg.cc/Rhy0B12F/sherlock-holmes-cover.jpg",
-      name: "The Great Adventures of Sherlock Holmes",
-      author: "Sir Arthur Conan Doyle",
-      price: 400,
-      quantity: 10,
-      genre: "crime",
+    id: 13,
+    img: "https://i.postimg.cc/Rhy0B12F/sherlock-holmes-cover.jpg",
+    name: "The Great Adventures of Sherlock Holmes",
+    author: "Sir Arthur Conan Doyle",
+    price: 400,
+    quantity: 10,
+    genre: "crime",
   },
   {
-      id: 14,
-      img: "https://i.postimg.cc/JzcR6W7t/simplifying-js-cover.jpg",
-      name: "Simplifying JavaScript",
-      author: "Joe Morgan",
-      price: 950,
-      quantity: 10,
-      genre: "nonfiction",
+    id: 14,
+    img: "https://i.postimg.cc/JzcR6W7t/simplifying-js-cover.jpg",
+    name: "Simplifying JavaScript",
+    author: "Joe Morgan",
+    price: 950,
+    quantity: 10,
+    genre: "nonfiction",
   },
   {
-      id: 15,
-      img: "https://i.postimg.cc/9QGQ67bm/twyford-code-cover.jpg",
-      name: "The Twyford Code",
-      author: "Janice Hallett",
-      price: 350,
-      quantity: 10,
-      genre: "crime",
+    id: 15,
+    img: "https://i.postimg.cc/9QGQ67bm/twyford-code-cover.jpg",
+    name: "The Twyford Code",
+    author: "Janice Hallett",
+    price: 350,
+    quantity: 10,
+    genre: "crime",
   },
 ];
 
@@ -155,7 +155,9 @@ function showBooks(books) {
         <cite class="text-center">by ${book.author}</cite>
         <span class="mt-5 mb-0 p-2 d-flex align-items-center justify-content-between">
         <h5>R${parseInt(book.price).toFixed(2)}</h5>
-        <button onclick="addToCart(${book.id})" class="add-btn">Add to Cart</button>
+        <button onclick="addToCart(${
+          book.id
+        })" class="add-btn">Add to Cart</button>
         </span>
         </span>`;
 
@@ -173,7 +175,6 @@ function sortLTH() {
   let sortedBooks = [...books].sort((b1, b2) => b1.price - b2.price);
   showBooks(sortedBooks);
 }
-
 
 // functions to filter books by genre
 function filterNonfic() {
@@ -200,7 +201,6 @@ function filterKids() {
   let filteredBooks = books.filter((book) => book.genre === "kids");
   showBooks(filteredBooks);
 }
-
 
 // cart functions
 // local storage stuff - first initializing the cart as either an empty array or an array of books as retrieved from local storage
@@ -234,7 +234,9 @@ function cartRefresh() {
     const basketBook = document.createElement("div");
     basketBook.innerHTML = `
         <div class="p-2 d-flex align-items-center justify-content-between">
-        <img src="${book.img}" alt="${book.name}" id="book-cover" style="width:100px;">
+        <img src="${book.img}" alt="${
+      book.name
+    }" id="book-cover" style="width:100px;">
         <div class="me-auto p-3">
         <h5>${book.name}</h5>
         <p>R${parseInt(book.price).toFixed(2)}</p>

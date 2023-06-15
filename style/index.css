@@ -1,102 +1,102 @@
 /* font link */
-@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Raleway', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway", sans-serif;
 }
 
 body {
-    background-color:  #F5F0BB !important;
+  background-color: #f5f0bb !important;
 }
 
 /* navbar */
 .logo {
-    width: 100px;
+  width: 100px;
 }
 
 .nav-bg {
-    background-color: #B3C890 !important;
+  background-color: #b3c890 !important;
 }
 
 .nav-link:hover {
-    background-color: #DBDFAA;
-    border-radius: 5px;
+  background-color: #dbdfaa;
+  border-radius: 5px;
 }
 
 .active {
-    background-color: #DBDFAA !important;
-    border-radius: 5px !important;
+  background-color: #dbdfaa !important;
+  border-radius: 5px !important;
 }
 
 /* heading */
 .hero {
-    background-image: url("https://i.postimg.cc/gj4qQLJd/books-bg-3.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 450px;
+  background-image: url("https://i.postimg.cc/gj4qQLJd/books-bg-3.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 450px;
 }
 
 .heading-mini {
-    background-color: #DBDFAA;
-    width: 50%;
-    display: block;
-    margin: auto;
+  background-color: #dbdfaa;
+  width: 50%;
+  display: block;
+  margin: auto;
 }
 
 /* main */
 .books-displays {
-    display: flex;
+  display: flex;
 }
 
 .books-card {
-    display: grid;
-    grid-template-columns: auto auto auto;
+  display: grid;
+  grid-template-columns: auto auto auto;
 }
 
 main .light-bg {
-    background-color: #F5F0BB;
+  background-color: #f5f0bb;
 }
 
 main .card-bg {
-    background-color: #F5F0BB;
+  background-color: #f5f0bb;
 }
 
 main .blue-bg {
-    background-color: #73A9AD;
+  background-color: #73a9ad;
 }
 
 /* footer */
 .icons {
-    width: 27px;
-    padding: 5px;
+  width: 27px;
+  padding: 5px;
 }
 
 @media screen and (max-width: 800px) {
-    .books-displays {
-        display: block;
-    }
+  .books-displays {
+    display: block;
+  }
 }
 
 @media screen and (max-width: 500px) {
-    .books-card {
-        display: block;
-    }
+  .books-card {
+    display: block;
+  }
 
-    .add-bg {
-        background-color: #DBDFAA;
-        opacity: 0.85;
-        border-top: 1px solid black;
-        border-bottom: 1px solid black;
-    }
+  .add-bg {
+    background-color: #dbdfaa;
+    opacity: 0.85;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+  }
 }
 
 /* media queries */
 @media screen and (max-width: 400px) {
-    .nav-name {
-        display: none;
-    }
+  .nav-name {
+    display: none;
+  }
 }

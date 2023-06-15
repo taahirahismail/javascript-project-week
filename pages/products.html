@@ -97,7 +97,9 @@
     </header>
 
     <main>
-      <div class="mt-3 p-4 text-center border border-start-0 border-end-0 border-black heading">
+      <div
+        class="mt-3 p-4 text-center border border-start-0 border-end-0 border-black heading"
+      >
         <h1>Buy Our Books!</h1>
       </div>
 
@@ -118,35 +120,47 @@
         <div
           class="filtering d-flex align-items-center justify-content-center m-1 p-2"
         >
-        <h4 class="p-3">Filter (by genre):</h4>
-        <div class="btns">
-          <button id="view-all-btn" class="filter-btns" onclick="showBooks(books)">
-            View All
-          </button>
-            <button id="nonfic-btn" class="filter-btns" onclick="filterNonfic()">
-                Non-Fiction
-              </button>
-              <button
-                id="romance-btn"
-                class="filter-btns"
-                onclick="filterRomance()"
-              >
-                Romance
-              </button>
-              <button
-                id="crime-mystery-btn"
-                class="filter-btns"
-                onclick="filterCrimeMys()"
-              >
-                Crime/Mystery
-              </button>
-              <button id="horror-btn" class="filter-btns" onclick="filterHorror()">
-                Horror
-              </button>
-              <button id="kids-btn" class="filter-btns" onclick="filterKids()">
-                Children
-              </button>
-        </div>
+          <h4 class="p-3">Filter (by genre):</h4>
+          <div class="btns">
+            <button
+              id="view-all-btn"
+              class="filter-btns"
+              onclick="showBooks(books)"
+            >
+              View All
+            </button>
+            <button
+              id="nonfic-btn"
+              class="filter-btns"
+              onclick="filterNonfic()"
+            >
+              Non-Fiction
+            </button>
+            <button
+              id="romance-btn"
+              class="filter-btns"
+              onclick="filterRomance()"
+            >
+              Romance
+            </button>
+            <button
+              id="crime-mystery-btn"
+              class="filter-btns"
+              onclick="filterCrimeMys()"
+            >
+              Crime/Mystery
+            </button>
+            <button
+              id="horror-btn"
+              class="filter-btns"
+              onclick="filterHorror()"
+            >
+              Horror
+            </button>
+            <button id="kids-btn" class="filter-btns" onclick="filterKids()">
+              Children
+            </button>
+          </div>
         </div>
       </div>
 
@@ -170,13 +184,15 @@
               </div>
             </div>
             <div class="modal-footer">
-                <h5
+              <h5
                 class="m-2 p-2 d-flex align-items-center justify-content-center"
-                >
+              >
                 Total:
                 <p id="total" class="m-2 p-2"></p>
-            </h5>
-            <a href="./checkout.html" class="btn btn-outline-success">Proceed to Checkout!</a>
+              </h5>
+              <a href="./checkout.html" class="btn btn-outline-success"
+                >Proceed to Checkout!</a
+              >
             </div>
           </div>
         </div>
